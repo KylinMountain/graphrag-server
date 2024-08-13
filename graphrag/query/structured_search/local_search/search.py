@@ -86,11 +86,13 @@ class LocalSearch(BaseSearch):
                 **self.llm_params,
             )
 
+            end_time = time.time() - start_time
+            log.info("GENERATE ANSWER: %s. QUERY: %s, ANSWER: %s", end_time, query, response)
             return SearchResult(
                 response=response,
                 context_data=context_records,
                 context_text=context_text,
-                completion_time=time.time() - start_time,
+                completion_time=end_time,
                 llm_calls=1,
                 prompt_tokens=num_tokens(search_prompt, self.token_encoder),
             )
