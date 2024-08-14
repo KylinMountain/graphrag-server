@@ -40,12 +40,12 @@ Return output as a well-formed JSON-formatted string with the following format:
 
 Points supported by data should list their data references as follows:
 
-"This is an example sentence supported by multiple data references [Data: <dataset name> (record ids); <dataset name> (record ids)]."
+"This is an example sentence supported by multiple data references [^Data:<dataset name>(record ids)] [^Data:<dataset name>(record ids)]."
 
 Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
 
 For example:
-"Person X is the owner of Company Y and subject to many allegations of wrongdoing [Data: Reports (1), Entities (5, 7); Relationships (23); Claims (7, 2, 34, 64, 46, +more)]."
+"Person X is the owner of Company Y and subject to many allegations of wrongdoing [^Data:Reports(1)] [^Data:Entities(5)] [^Data:Entities(7)] [^Data:Relationships(23)] [^Data:Claims(7)] [^Data:Claims(2)] [^Data:Claims(34)] [^Data:Claims(64)] [^Data:Claims(46,+more)]."
 
 where 1, 5, 7, 23, 2, 34, 46, and 64 represent the id (not the index) of the relevant data record.
 
@@ -81,19 +81,19 @@ Output:
     "findings": [
         {{
             "summary": "Verdant Oasis Plaza as the central location",
-            "explanation": "Verdant Oasis Plaza is the central entity in this community, serving as the location for the Unity March. This plaza is the common link between all other entities, suggesting its significance in the community. The plaza's association with the march could potentially lead to issues such as public disorder or conflict, depending on the nature of the march and the reactions it provokes. [Data: Entities (5), Relationships (37, 38, 39, 40, 41,+more)]"
+            "explanation": "Verdant Oasis Plaza is the central entity in this community, serving as the location for the Unity March. This plaza is the common link between all other entities, suggesting its significance in the community. The plaza's association with the march could potentially lead to issues such as public disorder or conflict, depending on the nature of the march and the reactions it provokes [^Data:Entities(5)] [^Data:Relationships(37)] [^Data:Relationships(38)] [^Data:Relationships(39)] [^Data:Relationships(40)] [^Data:Relationships(41,+more)]"
         }},
         {{
             "summary": "Harmony Assembly's role in the community",
-            "explanation": "Harmony Assembly is another key entity in this community, being the organizer of the march at Verdant Oasis Plaza. The nature of Harmony Assembly and its march could be a potential source of threat, depending on their objectives and the reactions they provoke. The relationship between Harmony Assembly and the plaza is crucial in understanding the dynamics of this community. [Data: Entities(6), Relationships (38, 43)]"
+            "explanation": "Harmony Assembly is another key entity in this community, being the organizer of the march at Verdant Oasis Plaza. The nature of Harmony Assembly and its march could be a potential source of threat, depending on their objectives and the reactions they provoke. The relationship between Harmony Assembly and the plaza is crucial in understanding the dynamics of this community [^Data:Entities(6)] [^Data:Relationships(38)] [^Data:Relationships(43)]."
         }},
         {{
             "summary": "Unity March as a significant event",
-            "explanation": "The Unity March is a significant event taking place at Verdant Oasis Plaza. This event is a key factor in the community's dynamics and could be a potential source of threat, depending on the nature of the march and the reactions it provokes. The relationship between the march and the plaza is crucial in understanding the dynamics of this community. [Data: Relationships (39)]"
+            "explanation": "The Unity March is a significant event taking place at Verdant Oasis Plaza. This event is a key factor in the community's dynamics and could be a potential source of threat, depending on the nature of the march and the reactions it provokes. The relationship between the march and the plaza is crucial in understanding the dynamics of this community. [^Data:Relationships(39)]"
         }},
         {{
             "summary": "Role of Tribune Spotlight",
-            "explanation": "Tribune Spotlight is reporting on the Unity March taking place in Verdant Oasis Plaza. This suggests that the event has attracted media attention, which could amplify its impact on the community. The role of Tribune Spotlight could be significant in shaping public perception of the event and the entities involved. [Data: Relationships (40)]"
+            "explanation": "Tribune Spotlight is reporting on the Unity March taking place in Verdant Oasis Plaza. This suggests that the event has attracted media attention, which could amplify its impact on the community. The role of Tribune Spotlight could be significant in shaping public perception of the event and the entities involved. [^Data:Relationships(40)]"
         }}
     ]
 }}
@@ -136,12 +136,12 @@ Return output as a well-formed JSON-formatted string with the following format:
 
 Points supported by data should list their data references as follows:
 
-"This is an example sentence supported by multiple data references [Data: <dataset name> (record ids); <dataset name> (record ids)]."
+"This is an example sentence supported by multiple data references [^Data:<dataset name>(record ids)] [^Data:<dataset name>(record ids)]."
 
 Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
 
 For example:
-"Person X is the owner of Company Y and subject to many allegations of wrongdoing [Data: Reports (1), Entities (5, 7); Relationships (23); Claims (7, 2, 34, 64, 46, +more)]."
+"Person X is the owner of Company Y and subject to many allegations of wrongdoing [^Data:Reports(1)] [^Data:Entities(5)] [^Data:Entities(7)] [^Data:Relationships(23)] [^Data:Claims(7)] [^Data:Claims(2)] [^Data:Claims(34)] [^Data:Claims(64)] [^Data:Claims(46,+more)]."
 
 where 1, 5, 7, 23, 2, 34, 46, and 64 represent the id (not the index) of the relevant data record.
 
