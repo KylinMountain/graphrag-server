@@ -42,7 +42,7 @@ Points supported by data should list their data references as follows:
 
 "This is an example sentence supported by multiple data references [^Data:<dataset name>(record ids)] [^Data:<dataset name>(record ids)]."
 
-Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+**References should be listed with a single record ID per citation**, with each citation containing only one record ID. For example, [^Data:Relationships(38)] [^Data:Relationships(55)], instead of [^Data:Relationships(38, 55)].
 
 For example:
 "Person X is the owner of Company Y and subject to many allegations of wrongdoing [^Data:Reports(1)] [^Data:Entities(5)] [^Data:Entities(7)] [^Data:Relationships(23)] [^Data:Claims(7)] [^Data:Claims(2)] [^Data:Claims(34)] [^Data:Claims(64)] [^Data:Claims(46,+more)]."
@@ -138,7 +138,7 @@ Points supported by data should list their data references as follows:
 
 "This is an example sentence supported by multiple data references [^Data:<dataset name>(record ids)] [^Data:<dataset name>(record ids)]."
 
-Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+**References should be listed with a single record ID per citation**, with each citation containing only one record ID. For example, [^Data:Relationships(38)] [^Data:Relationships(55)], instead of [^Data:Relationships(38, 55)].
 
 For example:
 "Person X is the owner of Company Y and subject to many allegations of wrongdoing [^Data:Reports(1)] [^Data:Entities(5)] [^Data:Entities(7)] [^Data:Relationships(23)] [^Data:Claims(7)] [^Data:Claims(2)] [^Data:Claims(34)] [^Data:Claims(64)] [^Data:Claims(46,+more)]."

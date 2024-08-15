@@ -21,7 +21,7 @@ Points supported by data should list their data references as follows:
 
 The <dataset name> should be one of Entities, Relationships, Claims, Sources, Reports.
 
-Do not list more than 5 record ids in a single reference. Instead, list the top 5 most relevant record ids and add "+more" to indicate that there are more.
+**References should be listed with a single record ID per citation**, with each citation containing only one record ID. For example, [^Data:Relationships(38)] [^Data:Relationships(55)], instead of [^Data:Relationships(38, 55)].
 
 For example:
 
