@@ -27,11 +27,11 @@ Return output as a well-formed JSON-formatted string with the following format. 
     }}
 
 # Grounding Rules
-After each paragraph, add data record reference if the content of the paragraph was derived from one or more data records. Reference is in the format of [records: <record_source> (<record_id_list>, ...<record_source> (<record_id_list>)]. If there are more than 10 data records, show the top 10 most relevant records.
+After each paragraph, add data record reference if the content of the paragraph was derived from one or more data records. Reference is in the format of a list like [^Data:<record_source>(<record_id>)] [^Data:<record_source>(<record_id>)]... If there are more than 10 data records, show the top 10 most relevant records.
 Each paragraph should contain multiple sentences of explanation and concrete examples with specific named entities. All paragraphs must have these references at the start and end. Use "NONE" if there are no related roles or records. Everything should be in {language}.
 
 Example paragraph with references added:
-This is a paragraph of the output text [records: Entities (1, 2, 3), Claims (2, 5), Relationships (10, 12)]
+This is a paragraph of the output text [^Data:Entities(1)] [^Data:Entities(2)] [^Data:Entities(3)] [^Data:Claims(2)] [^Data:Claims(5)] [^Data:Relationships(10)] [^Data:Relationships(12)]
 
 # Example Input
 -----------
@@ -62,25 +62,24 @@ of which are associated with the rally event.",
             "summary": "Abila City Park as the central location",
             "explanation": "Abila City Park is the central entity in this community, serving as the location for the POK rally. This park is the common link between all other
 entities, suggesting its significance in the community. The park's association with the rally could potentially lead to issues such as public disorder or conflict, depending on the
-nature of the rally and the reactions it provokes. [records: Entities (5), Relationships (37, 38, 39, 40)]"
+nature of the rally and the reactions it provokes. [^Data:Entities(5)] [^Data:Relationships(37)] [^Data:Relationships(38)] [^Data:Relationships(39)] [^Data:Relationships(40)]"
         }},
         {{
             "summary": "POK's role in the community",
             "explanation": "POK is another key entity in this community, being the organizer of the rally at Abila City Park. The nature of POK and its rally could be a potential
 source of threat, depending on their objectives and the reactions they provoke. The relationship between POK and the park is crucial in understanding the dynamics of this community.
-[records: Relationships (38)]"
+[^Data:Relationships(38)]"
         }},
         {{
             "summary": "POKRALLY as a significant event",
             "explanation": "The POKRALLY is a significant event taking place at Abila City Park. This event is a key factor in the community's dynamics and could be a potential
 source of threat, depending on the nature of the rally and the reactions it provokes. The relationship between the rally and the park is crucial in understanding the dynamics of this
-community. [records: Relationships (39)]"
+community. [^Data:Relationships(39)]"
         }},
         {{
             "summary": "Role of Central Bulletin",
             "explanation": "Central Bulletin is reporting on the POK rally taking place in Abila City Park. This suggests that the event has attracted media attention, which could
-amplify its impact on the community. The role of Central Bulletin could be significant in shaping public perception of the event and the entities involved. [records: Relationships
-(40)]"
+amplify its impact on the community. The role of Central Bulletin could be significant in shaping public perception of the event and the entities involved. [^Data:Relationships(40)]"
         }}
     ]
 
