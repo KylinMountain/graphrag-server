@@ -247,8 +247,10 @@ async def chat_completions(request: gtypes.ChatCompletionRequest):
     request.model = get_latest_model(request.model)
 
     try:
-        history = request.messages[:-1]
-        conversation_history = ConversationHistory.from_list([message.dict() for message in history])
+        conversation_history = None
+        if len(request.messages) > 1:
+            history = request.messages[:-1]
+            conversation_history = ConversationHistory.from_list([message.dict() for message in history])
 
         if request.model.endswith("global"):
             search = await initialize_search(request, global_search, request.model)
