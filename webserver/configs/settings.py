@@ -55,8 +55,16 @@ def load_settings_from_yaml(file_path: str) -> Settings:
     load_dotenv()
     llm_params = LLMParameters(**llm_config)
     llm_params.api_key = os.environ.get("GRAPHRAG_API_KEY", llm_config['api_key'])
+    if llm_params.api_key == "<API_KEY>":
+        llm_params.api_key = llm_config['api_key']
+    if not llm_params.api_key:
+        raise ValueError("llm_params.api_key is empty. Please provide a valid API key.")
     text_embedding = TextEmbeddingConfig(**embeddings_config)
     text_embedding.llm.api_key = os.environ.get("GRAPHRAG_API_KEY", embeddings_config['llm']['api_key'])
+    if not text_embedding.llm.api_key:
+        raise ValueError("text_embedding.llm.api_key is empty. Please provide a valid API key.")
+    if text_embedding.llm.api_key == "<API_KEY>":
+        text_embedding.llm.api_key = embeddings_config['llm']['api_key']
 
     return Settings(
         llm=llm_params,
